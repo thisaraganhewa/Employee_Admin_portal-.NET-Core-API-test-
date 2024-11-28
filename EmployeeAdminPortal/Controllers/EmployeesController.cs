@@ -72,5 +72,30 @@ namespace EmployeeAdminPortal.Controllers
 
 
         }
+
+        [HttpPut]
+        [Route("{id:guid}")]
+        public IActionResult UpdateEmployee( Guid id, UpdateEmployeeDto updateEmployeeDto) 
+        {
+
+            var employee = dbContext.Employees.Find(id);
+
+            if(employee is null)
+            {
+
+                return NotFound("Employee Not Found");
+
+            }
+
+            employee.Name = updateEmployeeDto.Name;
+            employee.Email = updateEmployeeDto.Email;
+            employee.Phone = updateEmployeeDto.Phone;
+            employee.salary = updateEmployeeDto.salary;
+
+            dbContext.SaveChanges();
+
+            return Ok(employee);
+
+        }
     }
 }
