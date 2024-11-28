@@ -26,7 +26,7 @@ namespace EmployeeAdminPortal.Controllers
         }
 
         [HttpPost]
-        public IActionResult addNewEmployee()
+        public IActionResult AddNewEmployee()
         {
 
 
