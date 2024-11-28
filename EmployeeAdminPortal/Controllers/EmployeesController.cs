@@ -24,5 +24,13 @@ namespace EmployeeAdminPortal.Controllers
             return Ok(allEmployees);
 
         }
+
+        [HttpPost]
+        public IActionResult addNewEmployee()
+        {
+
+
+
+        }
     }
 }
